@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  app-database:
+    image: mysql:8
+    container_name: app-database
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: demo
+      MYSQL_USER: demo
+      MYSQL_PASSWORD: demo
+    ports:
+      - "3306:3306"
+    volumes:
+      - app-db:/var/lib/mysql
+
+volumes:
+  app-db:
+
